@@ -34,7 +34,7 @@ The home page can be customized using following variables:
 Run the application with docker
 
 ```
-docker run -d --name lodview  -p 8080:8080 -e LODVIEW_SPARQLENDPOINT="https://dbpedia.org/sparql"  -e LODVIEW_URISPACE="http://dbpedia.org/resource/" lodview
+docker run -d --name lodview  -p 8080:8080 -e LODVIEW_SPARQLENDPOINT="https://dbpedia.org/sparql"  -e LODVIEW_URISPACE="http://dbpedia.org/resource/" linkeddatacenter/lodview
 ```    
 
 Try it at http://localhost:8080/Linked_Data
@@ -46,8 +46,8 @@ VERSION=1.0.0
 NAME=linkeddatacenter/lodview
 git tag $VERSION
 docker build --no-cache  -t $NAME .
-docker tag lodview $NAME:$VERSION
-docker tag lodview $NAME:latest
-docker login docker push $NAME:$VERSION
-docker login docker push $NAME:latest
+docker tag $NAME:latest $NAME:$VERSION
+docker login 
+docker push $NAME:$VERSION
+docker push $NAME:latest
 
