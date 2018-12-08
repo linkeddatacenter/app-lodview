@@ -90,7 +90,7 @@
 ##	to the HTML representation of the resources, live it blank if you want to 
 ##  use the "pure content negotiation mode", WARNING use suffix OR prefix, not both
     
-    conf:httpRedirectSuffix ".html"; ## or eg. ".html";
+    conf:httpRedirectSuffix ""; ## or eg. ".html";
     #conf:httpRedirectPrefix ""; ## or eg. "";
 
     ##conf:httpRedirectExcludeList ""; 	## a comma separeted list of regex to match which resources will use "pure content negotiation mode"
@@ -120,10 +120,10 @@
         {<${IRI}> ?p ?o} 
         UNION 
         {<${IRI}> ?p1 ?s . FILTER(isBlank(?s)) . ?s ?p ?o} 
-        UNION 
-        {<${IRI}> ?p1 ?s1 .  FILTER(isBlank(?s1)) . ?s1 ?p2 ?s . FILTER(isBlank(?s)) . ?s ?p ?o}
-        UNION 
-        {<${IRI}> ?p1 ?s1 .  FILTER(isBlank(?s1)) . ?s1 ?p2 ?s2 . FILTER(isBlank(?s2)) . ?s2 ?p3 ?s . FILTER(isBlank(?s)) . ?s ?p ?o}		
+        #UNION 
+        #{<${IRI}> ?p1 ?s1 .  FILTER(isBlank(?s1)) . ?s1 ?p2 ?s . FILTER(isBlank(?s)) . ?s ?p ?o}
+        #UNION 
+        #{<${IRI}> ?p1 ?s1 .  FILTER(isBlank(?s1)) . ?s1 ?p2 ?s2 . FILTER(isBlank(?s2)) . ?s2 ?p3 ?s . FILTER(isBlank(?s)) . ?s ?p ?o}		
         } LIMIT 10000""" ;
 
 
@@ -136,10 +136,10 @@
         {<${IRI}> ?p ?o} 
         UNION 
         {<${IRI}> ?p1 ?s . FILTER(isBlank(?s)) . ?s ?p ?o} 
-        UNION 
-        {<${IRI}> ?p1 ?s1 .  FILTER(isBlank(?s1)) . ?s1 ?p2 ?s . FILTER(isBlank(?s)) . ?s ?p ?o}
-        UNION 
-        {<${IRI}> ?p1 ?s1 .  FILTER(isBlank(?s1)) . ?s1 ?p2 ?s2 . FILTER(isBlank(?s2)) . ?s2 ?p3 ?s . FILTER(isBlank(?s)) . ?s ?p ?o}		
+        #UNION 
+        #{<${IRI}> ?p1 ?s1 .  FILTER(isBlank(?s1)) . ?s1 ?p2 ?s . FILTER(isBlank(?s)) . ?s ?p ?o}
+        #UNION 
+        #{<${IRI}> ?p1 ?s1 .  FILTER(isBlank(?s1)) . ?s1 ?p2 ?s2 . FILTER(isBlank(?s2)) . ?s2 ?p3 ?s . FILTER(isBlank(?s)) . ?s ?p ?o}		
         } LIMIT 10000""" ;
 
 
