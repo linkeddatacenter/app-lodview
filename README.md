@@ -45,7 +45,12 @@ Try it at http://localhost:9090/Linked_Data
 ```
 VERSION=1.0.1
 NAME=linkeddatacenter/lodview
+git add .
+git commit -m "Ready for $VERSION"
 git tag $VERSION
+git push --follow-tags
+
+
 docker build --no-cache  -t $NAME .
 docker tag $NAME:latest $NAME:$VERSION
 docker login 
