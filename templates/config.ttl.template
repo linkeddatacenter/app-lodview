@@ -160,7 +160,7 @@ conf:defaultInverseBehaviour "close";
 ##	if you are using a proxy, set it at <auto> for testing, an installation on dbpedia
 ##	domain should use <http://dbpedia.org/resource/>
 
-    conf:publicUrlPrefix <auto>; ## or <auto>
+    conf:publicUrlPrefix <%%LODVIEW_PUBLICURLPREFIX%%>; ## or <auto>
 
 
 ## solve IRI issues in particular environments (proxypass, etc.)

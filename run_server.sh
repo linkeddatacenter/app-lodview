@@ -9,9 +9,10 @@ LODVIEW_SPARQLENDPOINT=${LODVIEW_SPARQLENDPOINT:-https://data.budget.g0v.it/sdaa
 LODVIEW_HOMEURL=${LODVIEW_HOMEURL:-http://linkeddata.center/}
 LODVIEW_LANG=${LODVIEW_LANG:-auto}
 LODVIEW_LICENSE=${LODVIEW_LICENSE:-""}
-LODMAP_HOME_TITLE=${LODMAP_HOME_TITLE:-"Welcome to LodeView Application"}
-LODMAP_HOME_ABSTRACT=${LODMAP_HOME_ABSTRACT:-"Please try to refer the <a href='/welcome'>welcome resource</a>"}
-LODMAP_HOME_DESCRIPTION=${LODMAP_HOME_DESCRIPTION:-"This is a linked data browser of the data contained in SPARQL end point."}
+LODVIEW_PUBLICURLPREFIX=${LODVIEW_PUBLICURLPREFIX:-https://data.budget.g0v.it/lodview/}
+LODVIEW_HOME_TITLE=${LODMAP_HOME_TITLE:-"Welcome to LodeView Application"}
+LODVIEW_HOME_ABSTRACT=${LODMAP_HOME_ABSTRACT:-"Please try to refer the <a href='welcome'>welcome resource</a>"}
+LODVIEW_HOME_DESCRIPTION=${LODMAP_HOME_DESCRIPTION:-"This is a linked data browser of the data contained in SPARQL end point."}
 
 ## substitute %%VARNAME%% with the value of $VARNAME
 ## $1= template file $2 = target

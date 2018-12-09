@@ -13,12 +13,12 @@
 		<header>
 			<hgroup>
 				<h1>
-					<span>%%LODMAP_HOME_TITLE%%</span>
+					<span>%%LODVIEW_HOME_TITLE%%</span>
 				</h1>
 				<h2></h2>
 			</hgroup>
 			<div id="abstract">
-				<div class="value">%%LODMAP_HOME_ABSTRACT%%</div>
+				<div class="value">%%LODVIEW_HOME_ABSTRACT%%</div>
 			</div>
 
 		</header>
@@ -27,7 +27,7 @@
 
 		<div id="directs">
 
-			<div class="value">%%LODMAP_HOME_DESCRIPTION%%</div>
+			<div class="value">%%LODVIEW_HOME_DESCRIPTION%%</div>
 
 		</div>
 

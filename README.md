@@ -15,27 +15,28 @@ This implementation is functional to the LinkedData.Center sdaas tools services 
 
 You can use the following environment variables to customize the container:
 
-- `LODVIEW_URISPACE` -> the value for void:uriSpace fro knowledge base (default : http://linkeddata.center/resource/)
+- `LODVIEW_URISPACE` -> the value for void:uriSpace fro knowledge base (default: http://data.budget.g0v.it/resource/)
 - `LODVIEW_URISPACEPREFIX` -> the prefix for uriSpace (default 'resource')
-- `LODVIEW_SPARQLENDPOINT` -> the sparql endpoint for the knowledge base (default : https://linkeddata.center/sparql)
-- `LODVIEW_AUTHUSERNAME` -> the sparql endpoint username used for sparql endpoint access authentication ('' for default )
-- `LODVIEW_AUTHPASSWORD` -> the sparql endpoint username used for sparql endpoint access  authentication ('' for default )
+- `LODVIEW_SPARQLENDPOINT` -> the sparql endpoint for the knowledge base (default : https://data.budget.g0v.it/sdaas/sparql)
+- `LODVIEW_AUTHUSERNAME` -> the sparql endpoint username used for sparql endpoint access authentication (empty by default )
+- `LODVIEW_AUTHPASSWORD` -> the sparql endpoint username used for sparql endpoint access  authentication (empty by default )
 - `LODVIEW_HOMEURL` -> home link (accessible from the banner) ('http;//linkedddata.center/' for default )
-- `LODVIEW_LANG` -> home link (accessible from the banner) ('http;//linkedddata.center/' for default )
+- `LODVIEW_LANG` -> home link (accessible from the banner) ('auto' by default )
 - `LODVIEW_LICENSE` -> a service license statement (empty by default)
-- `LODVIEW_DATALICENSE` -> data provenance info and licenses
+- `LODVIEW_DATALICENSE` -> data provenance info and licenses (empty by default)
+- `LODVIEW_PUBLICURLPREFIX` -> how clients access your app ('https://data.budget.g0v.it/lodview/' by defatult). Use auto for local testing.
 
 The home page can be customized using following variables:
 
-- `LODMAP_HOME_TITLE` 
-- `LODMAP_HOME_ABSTRACT`
-- `LODMAP_HOME_DESCTRIPTION`
+- `LODVIEW_HOME_TITLE` 
+- `LODVIEW_HOME_ABSTRACT`
+- `LODVIEW_HOME_DESCRIPTION`
 
 Run the application with docker
 
 ```
 docker build -t test-lodview .
-docker run -d --name lodview  -p 9090:8080 -e LODVIEW_SPARQLENDPOINT="https://dbpedia.org/sparql"  -e LODVIEW_URISPACE="http://dbpedia.org/resource/" test-lodview 
+docker run -d --name lodview  -p 9090:8080 -e LODVIEW_SPARQLENDPOINT="https://dbpedia.org/sparql"  -e LODVIEW_URISPACE="http://dbpedia.org/resource/" -e LODVIEW_PUBLICURLPREFIX=auto test-lodview 
 ```    
 
 Try it at http://localhost:9090/Linked_Data
@@ -43,7 +44,7 @@ Try it at http://localhost:9090/Linked_Data
 ## Publish on docker hub
 
 ```
-VERSION=1.0.1
+VERSION=1.0.2
 NAME=linkeddatacenter/lodview
 git add .
 git commit -m "Ready for $VERSION"
