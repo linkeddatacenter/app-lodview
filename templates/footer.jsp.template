@@ -29,7 +29,7 @@
     <c:if test="${not empty conf.getLicense()}">
         ${conf.getLicense()}. 
     </c:if>
-    <a href='http://LinkedData.Center/' target='_blank'>Powered by <img  style='vertical-align: middle;' src='/staticResources/img/favicon.png' /> LinkedData.Center</a>, derived from the  
-    <a href="https://github.com/dvcama/LodView" target="_blank" title="based on LodView v1.2.1-SNAPSHOT">LodView</a> project.
+    Powered by <a href='http://LinkedData.Center/' target='_blank'><img  style='vertical-align: middle;' src='/staticResources/img/favicon.png' /> LinkedData.Center</a>, derived from  
+    <a href="https://github.com/dvcama/LodView" target="_blank" ><img  style='vertical-align: middle;' src='/staticResources/img/lodview-logo.png' /></a>.
     </div>
 </div>

@@ -20,7 +20,8 @@ You can use the following environment variables to customize the container:
 - `LODVIEW_SPARQLENDPOINT` -> the sparql endpoint for the knowledge base (default : https://data.budget.g0v.it/sdaas/sparql)
 - `LODVIEW_AUTHUSERNAME` -> the sparql endpoint username used for sparql endpoint access authentication (empty by default )
 - `LODVIEW_AUTHPASSWORD` -> the sparql endpoint username used for sparql endpoint access  authentication (empty by default )
-- `LODVIEW_HOMEURL` -> home link (accessible from the banner) ('http;//linkedddata.center/' for default )
+- `LODVIEW_HOMEURL` -> home link (accessible from the banner) ('http://linkedddata.center/' for default )
+- `LODEVIEW_HEADERLOGO` -> header logo url, relative or absolute (default ../img/logo-header-lodview@2x.png)
 - `LODVIEW_LANG` -> home link (accessible from the banner) ('auto' by default )
 - `LODVIEW_LICENSE` -> a service license statement (empty by default)
 - `LODVIEW_DATALICENSE` -> data provenance info and licenses (empty by default)
@@ -36,15 +37,15 @@ Run the application with docker
 
 ```
 docker build -t test-lodview .
-docker run -d --name lodview  -p 9090:8080 -e LODVIEW_SPARQLENDPOINT="https://dbpedia.org/sparql"  -e LODVIEW_URISPACE="http://dbpedia.org/resource/" -e LODVIEW_PUBLICURLPREFIX=auto test-lodview 
+docker run -d --name lodview  -p 9090:8080 -e LODVIEW_PUBLICURLPREFIX=auto test-lodview 
 ```    
 
-Try it at http://localhost:9090/Linked_Data
+Try it at http://localhost:9090/
 
 ## Publish on docker hub
 
 ```
-VERSION=1.0.2
+VERSION=1.1.0
 NAME=linkeddatacenter/lodview
 git add .
 git commit -m "Ready for $VERSION"

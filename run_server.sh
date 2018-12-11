@@ -7,6 +7,7 @@ LODVIEW_AUTHUSERNAME=${LODVIEW_AUTHUSERNAME:-""}
 LODVIEW_AUTHPASSWORD=${LODVIEW_AUTHPASSWORD:-""}
 LODVIEW_SPARQLENDPOINT=${LODVIEW_SPARQLENDPOINT:-https://data.budget.g0v.it/sdaas/sparql}
 LODVIEW_HOMEURL=${LODVIEW_HOMEURL:-http://linkeddata.center/}
+LODEVIEW_HEADERLOGO=${LODEVIEW_HEADERLOGO:-"../img/logo-header-lodview@2x.png"}
 LODVIEW_LANG=${LODVIEW_LANG:-auto}
 LODVIEW_LICENSE=${LODVIEW_LICENSE:-""}
 LODVIEW_PUBLICURLPREFIX=${LODVIEW_PUBLICURLPREFIX:-https://data.budget.g0v.it/lodview/}
@@ -28,10 +29,11 @@ function mytemplate {
 }
 
 TEMPLATE_DIR="/templates"
-APP_DIR="/usr/local/tomcat/webapps/ROOT/WEB-INF"
+APP_DIR="/usr/local/tomcat/webapps/ROOT"
 
-mytemplate $TEMPLATE_DIR/config.ttl.template $APP_DIR/conf.ttl
-mytemplate $TEMPLATE_DIR/footer.jsp.template $APP_DIR/views/inc/footer.jsp
-mytemplate $TEMPLATE_DIR/home.jsp.template $APP_DIR/views/home.jsp
+mytemplate $TEMPLATE_DIR/config.ttl.template $APP_DIR/WEB-INF/conf.ttl
+mytemplate $TEMPLATE_DIR/footer.jsp.template $APP_DIR/WEB-INF/views/inc/footer.jsp
+mytemplate $TEMPLATE_DIR/home.jsp.template $APP_DIR/WEB-INF/views/home.jsp
+mytemplate $TEMPLATE_DIR/custom.css.template $APP_DIR/resources/css/custom.css
 
 catalina.sh run
