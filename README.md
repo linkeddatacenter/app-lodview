@@ -50,7 +50,7 @@ Try it at http://localhost:9090/
 ```
 VERSION=1.2.0
 NAME=linkeddatacenter/lodview
-git add . && git commit -m "Ready for $VERSION" && git tag $VERSION && git push --follow-tags
+git add . && git commit -m "Ready for $VERSION" && git push
 
 
 docker build --no-cache  -t $NAME .
