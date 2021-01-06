@@ -15,8 +15,11 @@ This implementation is functional to the LinkedData.Center sdaas tools services 
 
 You can use the following environment variables to customize the container:
 
-- `LODVIEW_URISPACE` -> the value for void:uriSpace fro knowledge base (default: http://data.budget.g0v.it/resource/)
+
+- `LODVIEW_TBOXPREFIX` -> the prefix for uriSpace (default 'mef')
+- `LODVIEW_TBOXURISPACE` -> the main vocabulary for your domain ('http://w3id.org/g0v/it/mef#' by default)
 - `LODVIEW_URISPACEPREFIX` -> the prefix for uriSpace (default 'resource')
+- `LODVIEW_URISPACE` -> the value for void:uriSpace fro knowledge base (default: http://data.budget.g0v.it/resource/)
 - `LODVIEW_SPARQLENDPOINT` -> the sparql endpoint for the knowledge base (default : https://data.budget.g0v.it/sdaas/sparql)
 - `LODVIEW_AUTHUSERNAME` -> the sparql endpoint username used for sparql endpoint access authentication (empty by default )
 - `LODVIEW_AUTHPASSWORD` -> the sparql endpoint username used for sparql endpoint access  authentication (empty by default )
@@ -38,7 +41,7 @@ Run the application with docker
 ```
 docker build -t test-lodview .
 docker run -d --name lodview  -p 9090:8080 -e LODVIEW_PUBLICURLPREFIX=auto test-lodview 
-```    
+```
 
 Try it at http://localhost:9090/
 

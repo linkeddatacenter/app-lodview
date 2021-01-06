@@ -1,11 +1,14 @@
 #!/bin/bash
 # This file generates run time the configurations file from following environment variables
 
-LODVIEW_URISPACE=${LODVIEW_URISPACE:-http://data.budget.g0v.it/resource/}
+
+LODVIEW_TBOXSPACE=${LODVIEW_URISPACE:-"http://w3id.org/g0v/it/mef#"}
+LODVIEW_TBOXPREFIX=${LODVIEW_URISPACEPREFIX:-mef}        
+LODVIEW_URISPACE=${LODVIEW_URISPACE:-http://mef.linkeddata.cloud/resource/}
 LODVIEW_URISPACEPREFIX=${LODVIEW_URISPACEPREFIX:-resource}        
 LODVIEW_AUTHUSERNAME=${LODVIEW_AUTHUSERNAME:-""}
 LODVIEW_AUTHPASSWORD=${LODVIEW_AUTHPASSWORD:-""}
-LODVIEW_SPARQLENDPOINT=${LODVIEW_SPARQLENDPOINT:-https://data.budget.g0v.it/sdaas/sparql}
+LODVIEW_SPARQLENDPOINT=${LODVIEW_SPARQLENDPOINT:-https://data.budget.g0v.it/sparql}
 LODVIEW_HOMEURL=${LODVIEW_HOMEURL:-http://linkeddata.center/}
 LODEVIEW_HEADERLOGO=${LODEVIEW_HEADERLOGO:-"../img/logo-header-lodview@2x.png"}
 LODVIEW_LANG=${LODVIEW_LANG:-auto}

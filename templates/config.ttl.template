@@ -70,6 +70,7 @@
 @prefix sdaas: <http://linkeddata.center/sdaas/v1#> .
 @prefix fr: <http://linkeddata.center/botk-fr/v1#> .
 @prefix %%LODVIEW_URISPACEPREFIX%%: <%%LODVIEW_URISPACE%%> .
+@prefix %%LODVIEW_TBOXPREFIX%%: <%%LODVIEW_TBOXSPACE%%> .
 
 <> a conf:Configuration;
 
@@ -192,19 +193,20 @@ conf:defaultInverseBehaviour "close";
 
     conf:typeProperties			rdf:type;
     
-    conf:titleProperties		dc:title , dcterms:title, rdfs:label , <http://www.w3.org/2004/02/skos/core#prefLabel> , 
+    conf:titleProperties		dc:title , dcterms:title, rdfs:label , <http://www.w3.org/2004/02/skos/core#prefLabel> , schema:name ,
                                 <http://www.w3.org/2008/05/skos-xl#prefLabel> , <http://www.w3.org/2009/08/skos-reference/skos.html#prefLabel> , 
-                                gn:officialName , gn:name , rdf:value , foaf:surname , <http://purl.org/collections/nl/am/title> , <http://xmlns.com/foaf/0.1/name>;  
+                                gn:officialName , gn:name , rdf:value , foaf:surname , <http://purl.org/collections/nl/am/title> , <http://xmlns.com/foaf/0.1/name>,
+                                %%LODVIEW_TBOXPREFIX%%:name , %%LODVIEW_TBOXPREFIX%%:prefLabel , %%LODVIEW_TBOXPREFIX%%:title;  
                                 
-    conf:descriptionProperties	rdfs:comment , dc:description , dcterms:description , 
-                                dc:description , skos:definition ,  <http://dbpedia.org/ontology/abstract>;
+    conf:descriptionProperties	rdfs:comment , dc:description , dcterms:description , schema:description ,
+                                dc:description , skos:definition ,  <http://dbpedia.org/ontology/abstract>, %%LODVIEW_TBOXPREFIX%%:description, %%LODVIEW_TBOXPREFIX%%:definition ;
                                 
-    conf:imageProperties		foaf:depiction , <http://erlangen-crm.org/120111/P138i_has_representation> , crm-owl:P138i_has_representation ,
-                                <http://www.researchspace.org/ontology/FR138i_representation>;
+    conf:imageProperties		foaf:depiction , <http://erlangen-crm.org/120111/P138i_has_representation> , crm-owl:P138i_has_representation , schema:image ,
+                                <http://www.researchspace.org/ontology/FR138i_representation>, %%LODVIEW_TBOXPREFIX%%:image ;
                                 
-    conf:longitudeProperties	geo:long;
-    conf:latitudeProperties		geo:lat;
-    conf:linkingProperties		owl:sameAs , skos:exactMatch , gn:locatedIn ,  <http://www.bbc.co.uk/ontologies/coreconcepts/sameAs>;
+    conf:longitudeProperties	geo:long , schema:longitude ;
+    conf:latitudeProperties		geo:lat, schema:latitude ;
+    conf:linkingProperties		owl:sameAs , skos:exactMatch , gn:locatedIn ,  <http://www.bbc.co.uk/ontologies/coreconcepts/sameAs>, schema:sameAs, %%LODVIEW_TBOXPREFIX%%:sameAs;
 
     conf:videoProperties		<http://schema.org/VideoObject>;
     conf:audioProperties		<http://schema.org/AudioObject>;
