@@ -2,8 +2,8 @@
 # This file generates run time the configurations file from following environment variables
 
 
-LODVIEW_TBOXSPACE=${LODVIEW_URISPACE:-"http://w3id.org/g0v/it/mef#"}
-LODVIEW_TBOXPREFIX=${LODVIEW_URISPACEPREFIX:-mef}        
+LODVIEW_TBOXSPACE=${LODVIEW_TBOXSPACE:-"http://w3id.org/g0v/it/mef#"}
+LODVIEW_TBOXPREFIX=${LODVIEW_TBOXPREFIX:-app}        
 LODVIEW_URISPACE=${LODVIEW_URISPACE:-http://mef.linkeddata.cloud/resource/}
 LODVIEW_URISPACEPREFIX=${LODVIEW_URISPACEPREFIX:-resource}        
 LODVIEW_AUTHUSERNAME=${LODVIEW_AUTHUSERNAME:-""}

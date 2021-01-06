@@ -17,7 +17,7 @@ You can use the following environment variables to customize the container:
 
 
 - `LODVIEW_TBOXPREFIX` -> the prefix for uriSpace (default 'mef')
-- `LODVIEW_TBOXURISPACE` -> the main vocabulary for your domain ('http://w3id.org/g0v/it/mef#' by default)
+- `LODVIEW_TBOXSPACE` -> the main vocabulary for your domain ('http://w3id.org/g0v/it/mef#' by default)
 - `LODVIEW_URISPACEPREFIX` -> the prefix for uriSpace (default 'resource')
 - `LODVIEW_URISPACE` -> the value for void:uriSpace fro knowledge base (default: http://data.budget.g0v.it/resource/)
 - `LODVIEW_SPARQLENDPOINT` -> the sparql endpoint for the knowledge base (default : https://data.budget.g0v.it/sdaas/sparql)
@@ -48,12 +48,9 @@ Try it at http://localhost:9090/
 ## Publish on docker hub
 
 ```
-VERSION=1.1.0
+VERSION=1.2.0
 NAME=linkeddatacenter/lodview
-git add .
-git commit -m "Ready for $VERSION"
-git tag $VERSION
-git push --follow-tags
+git add . && git commit -m "Ready for $VERSION" && git tag $VERSION && git push --follow-tags
 
 
 docker build --no-cache  -t $NAME .
