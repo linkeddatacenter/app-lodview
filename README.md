@@ -49,7 +49,7 @@ Try it at http://localhost:9090/
 ## Publish on docker hub
 
 ```
-VERSION=1.2.0
+VERSION=1.3.0
 NAME=linkeddatacenter/lodview
 git add . && git commit -m "Ready for $VERSION" && git push
 
@@ -59,4 +59,4 @@ docker tag $NAME:latest $NAME:$VERSION
 docker login 
 docker push $NAME:$VERSION
 docker push $NAME:latest
-
+```
