@@ -18,6 +18,7 @@ LODVIEW_HOME_TITLE=${LODMAP_HOME_TITLE:-"Welcome to LodeView Application"}
 LODVIEW_HOME_ABSTRACT=${LODMAP_HOME_ABSTRACT:-"Please try to refer the <a href='welcome'>welcome resource</a>"}
 LODVIEW_HOME_DESCRIPTION=${LODMAP_HOME_DESCRIPTION:-"This is a linked data browser of the data contained in SPARQL end point."}
 
+
 ## substitute %%VARNAME%% with the value of $VARNAME
 ## $1= template file $2 = target
 function mytemplate {
@@ -32,11 +33,17 @@ function mytemplate {
 }
 
 TEMPLATE_DIR="/templates"
-APP_DIR="/usr/local/tomcat/webapps/ROOT"
 
-mytemplate $TEMPLATE_DIR/config.ttl.template $APP_DIR/WEB-INF/conf.ttl
-mytemplate $TEMPLATE_DIR/footer.jsp.template $APP_DIR/WEB-INF/views/inc/footer.jsp
-mytemplate $TEMPLATE_DIR/home.jsp.template $APP_DIR/WEB-INF/views/home.jsp
-mytemplate $TEMPLATE_DIR/custom.css.template $APP_DIR/resources/css/custom.css
+
+# Allow renaming of loadview app
+if [ "$APP_NAME" != "ROOT"  ]; then
+    mv "/usr/local/tomcat/webapps/ROOT" "/usr/local/tomcat/webapps/$APP_NAME"
+fi
+
+mytemplate $TEMPLATE_DIR/config.ttl.template /usr/local/tomcat/webapps/$APP_NAME/WEB-INF/conf.ttl
+mytemplate $TEMPLATE_DIR/footer.jsp.template /usr/local/tomcat/webapps/$APP_NAME/WEB-INF/views/inc/footer.jsp
+mytemplate $TEMPLATE_DIR/home.jsp.template /usr/local/tomcat/webapps/$APP_NAME/WEB-INF/views/home.jsp
+mytemplate $TEMPLATE_DIR/custom.css.template /usr/local/tomcat/webapps/$APP_NAME/resources/css/custom.css
+
 
 catalina.sh run

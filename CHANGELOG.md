@@ -5,6 +5,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.3.0]
+
+Added APP_NAME variable to allow overriding of the app name (defaults to root)
 
 ## [1.2.0]
 

@@ -29,6 +29,7 @@ You can use the following environment variables to customize the container:
 - `LODVIEW_LICENSE` -> a service license statement (empty by default)
 - `LODVIEW_DATALICENSE` -> data provenance info and licenses (empty by default)
 - `LODVIEW_PUBLICURLPREFIX` -> how clients access your app ('https://data.budget.g0v.it/lodview/' by defatult). Use auto for local testing.
+- `APP_NAME` -> overrides the pathname of the app url, by default is the root (APP_NAME="ROOT")
 
 The home page can be customized using following variables:
 
