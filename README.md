@@ -49,7 +49,7 @@ Try it at http://localhost:9090/
 ## Publish on docker hub
 
 ```
-VERSION=1.3.0
+VERSION=2.0.0
 NAME=linkeddatacenter/lodview
 git add . && git commit -m "Ready for $VERSION" && git push
 
